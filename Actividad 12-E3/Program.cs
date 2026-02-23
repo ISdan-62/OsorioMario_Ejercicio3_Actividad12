@@ -200,14 +200,161 @@ switch (opcion)
             {
                 case 1:
                     {
+                        double descuentoefectivo = 0.10;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.15;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentoefectivo = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.05;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = (monto * descuentoefectivo) + descuentocupon;
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentoefectivo}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 case 2:
                     {
+                        double descuentotarjeta = 0.06;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.15;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentotarjeta = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.05;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = monto * (descuentotarjeta + descuentocupon);
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentotarjeta}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 case 3:
                     {
+                        double descuentotransferencia = 0.05;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.10;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentotransferencia = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.07;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = monto * (descuentotransferencia + descuentocupon);
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentotransferencia}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 default:
@@ -232,14 +379,161 @@ switch (opcion)
             {
                 case 1:
                     {
+                        double descuentoefectivo = 0.10;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.15;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentoefectivo = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.05;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = (monto * descuentoefectivo) + descuentocupon;
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentoefectivo}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 case 2:
                     {
+                        double descuentotarjeta = 0.06;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.15;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentotarjeta = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.05;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = monto * (descuentotarjeta + descuentocupon);
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentotarjeta}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 case 3:
                     {
+                        double descuentotransferencia = 0.05;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.10;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentotransferencia = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.07;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = monto * (descuentotransferencia + descuentocupon);
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentotransferencia}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 default:
@@ -264,14 +558,161 @@ switch (opcion)
             {
                 case 1:
                     {
+                        double descuentoefectivo = 0.10;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.15;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentoefectivo = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.05;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = (monto * descuentoefectivo) + descuentocupon;
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentoefectivo}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 case 2:
                     {
+                        double descuentotarjeta = 0.06;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.15;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentotarjeta = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.05;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = monto * (descuentotarjeta + descuentocupon);
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentotarjeta}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 case 3:
                     {
+                        double descuentotransferencia = 0.05;
+                        double descuentocupon = 0;
+                        double recargo = 0;
+                        Console.WriteLine("Tiene cupón: S/N");
+                        string cupon = Console.ReadLine();
+                        if (cupon == "S")
+                        {
+                            Console.WriteLine("Ingrese la primera letra del cupon: ");
+                            string codigo = Console.ReadLine();
+                            Console.WriteLine("Ingrese el numero final del cupon: ");
+                            int numerofinal = int.Parse(Console.ReadLine());
+                            if (codigo == "U" && numerofinal % 2 == 0)
+                            {
+                                Console.WriteLine("cupon valido");
+                                descuentocupon = 0.10;
+                            }
+                            else
+                            {
+                                Console.WriteLine("Cupon invalido");
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("No tiene cupon");
+                        }
+                        Console.WriteLine("Reporte antifraude (1-3): ");
+                        int reporte = int.Parse(Console.ReadLine());
+
+                        if (reporte == 2 || reporte == 3)
+                        {
+                            Console.WriteLine("Fraude detectado - descuentos anulados");
+
+                            descuentotransferencia = 0;
+                            descuentocupon = 0;
+                            recargo = monto * 0.07;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Sin fraude");
+                        }
+                        double totaldescuentos = monto * (descuentotransferencia + descuentocupon);
+                        double totalFinal = monto - totaldescuentos + recargo;
+                        Console.WriteLine("RESUMEN DE FACTURA");
+                        Console.WriteLine($"Monto: {monto}");
+                        Console.WriteLine($"Descuento: {descuentotransferencia}");
+                        Console.WriteLine($"Descuento de cupon: {descuentocupon}");
+                        Console.WriteLine($"Total de descuento: {totaldescuentos}");
+                        Console.WriteLine($"Recargo: {recargo}");
+                        Console.WriteLine($"TOTAL FINAL: {totalFinal}");
                         break;
                     }
                 default:
